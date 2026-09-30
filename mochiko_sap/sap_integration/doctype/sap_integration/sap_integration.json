@@ -1,0 +1,559 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-17 15:43:47.712803",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "common_settings_section",
+  "disable_item_series",
+  "enabled",
+  "column_break_xjxe",
+  "connect_timeout",
+  "column_break_rama",
+  "read_timeout",
+  "auth_configuration_section",
+  "column_break_zhro",
+  "base_url",
+  "post_bom_url",
+  "patch_bom_url",
+  "get_bom_url",
+  "post_item_url",
+  "post_asn_url",
+  "post_packing_url",
+  "post_sales_order_url",
+  "post_asn_sales_invoice_url",
+  "post_production_order_for_sole_and_compound",
+  "post_daily_production_entry_for_sole_and_compound",
+  "post_daily_sfg_entry",
+  "get_sales_order_url",
+  "get_single_so_url",
+  "get_sales_order_update_url",
+  "get_sap_po_url",
+  "get_sap_po_update_url",
+  "get_bulk_production_order_url",
+  "get_single_production_order_url",
+  "get_production_order_update_url",
+  "get_delivery_note_url",
+  "get_mes_bin_url",
+  "post_production_assembly",
+  "get_mrp_url",
+  "get_production_issue_url",
+  "post_stock_transfer_url",
+  "post_upper_receiving",
+  "post_sole_receiving",
+  "get_sap_po_by_item_code",
+  "get_sap_po_by_po_number",
+  "get_jobwork_po_url",
+  "get_jobwork_po_update_url",
+  "get_so_bom",
+  "get_freestock",
+  "po_post",
+  "column_break_jtsu",
+  "sports_base_url",
+  "sports_post_bom_url",
+  "sports_patch_bom_url",
+  "sports_get_bom_url",
+  "sports_post_item_url",
+  "sports_post_asn_url",
+  "sports_post_packing_url",
+  "sports_post_sales_order_url",
+  "sports_post_asn_sales_invoice_url",
+  "sports_get_sales_order_url",
+  "sports_get_single_so_url",
+  "sports_get_sales_order_update_url",
+  "sports_get_sap_po_url",
+  "sports_get_sap_po_update_url",
+  "sports_get_bulk_production_order_url",
+  "sports_get_single_production_order_url",
+  "sports_get_production_order_update_url",
+  "sports_get_delivery_note_url",
+  "sports_get_mes_bin_url",
+  "sports_get_mrp_url",
+  "sports_get_jobwork_po_url",
+  "sports_get_jobwork_po_update_url",
+  "section_break_lrqi",
+  "column_break_psmw",
+  "allow_retry",
+  "max_retry",
+  "event_frequency",
+  "cron_format",
+  "last_execution",
+  "next_execution",
+  "batch_size",
+  "column_break_pnff",
+  "applicable_doctypes",
+  "max_time_in_minutes",
+  "headers_section",
+  "session_id",
+  "header_parameters",
+  "column_break_rdbv",
+  "session_id_2",
+  "db2_header_parameters"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "default": "60",
+   "description": "In seconds",
+   "fieldname": "connect_timeout",
+   "fieldtype": "Int",
+   "label": "Connect Timeout"
+  },
+  {
+   "default": "120",
+   "description": "In seconds",
+   "fieldname": "read_timeout",
+   "fieldtype": "Int",
+   "label": "Read Timeout"
+  },
+  {
+   "fieldname": "base_url",
+   "fieldtype": "Data",
+   "label": "Base URL"
+  },
+  {
+   "fieldname": "batch_size",
+   "fieldtype": "Int",
+   "label": "Batch Size"
+  },
+  {
+   "fieldname": "session_id",
+   "fieldtype": "Small Text",
+   "label": "Session ID"
+  },
+  {
+   "fieldname": "headers_section",
+   "fieldtype": "Section Break",
+   "label": "Headers"
+  },
+  {
+   "fieldname": "header_parameters",
+   "fieldtype": "Table",
+   "label": "Header Parameters",
+   "options": "Key Value Pair"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_retry",
+   "fieldtype": "Check",
+   "label": "Allow Retry"
+  },
+  {
+   "fieldname": "max_retry",
+   "fieldtype": "Int",
+   "label": "Max Retry"
+  },
+  {
+   "description": "Only requests linked to these doctypes will be processed. Leave blank to include all doctypes.",
+   "fieldname": "applicable_doctypes",
+   "fieldtype": "Table MultiSelect",
+   "label": "Applicable DocTypes",
+   "options": "SAP Integration DocType"
+  },
+  {
+   "fieldname": "auth_configuration_section",
+   "fieldtype": "Section Break",
+   "label": "Auth Configuration"
+  },
+  {
+   "fieldname": "column_break_psmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "event_frequency",
+   "fieldtype": "Select",
+   "label": "Event Frequency",
+   "options": "All\nHourly\nDaily\nWeekly\nMonthly\nYearly\nHourly Long\nDaily Long\nWeekly Long\nMonthly Long\nCron"
+  },
+  {
+   "depends_on": "eval:doc.event_frequency===\"Cron\"",
+   "fieldname": "cron_format",
+   "fieldtype": "Data",
+   "label": "Cron Format",
+   "mandatory_depends_on": "eval:doc.event_frequency===\"Cron\""
+  },
+  {
+   "fieldname": "last_execution",
+   "fieldtype": "Datetime",
+   "label": "Last Execution",
+   "read_only": 1
+  },
+  {
+   "fieldname": "next_execution",
+   "fieldtype": "Datetime",
+   "is_virtual": 1,
+   "label": "Next Execution"
+  },
+  {
+   "default": "1",
+   "fieldname": "column_break_zhro",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disable_item_series",
+   "fieldtype": "Check",
+   "label": "Disable Item Series"
+  },
+  {
+   "fieldname": "post_bom_url",
+   "fieldtype": "Data",
+   "label": "Post BOM URL"
+  },
+  {
+   "fieldname": "patch_bom_url",
+   "fieldtype": "Data",
+   "label": "Patch BOM URL"
+  },
+  {
+   "fieldname": "post_item_url",
+   "fieldtype": "Data",
+   "label": "Post Item URL"
+  },
+  {
+   "fieldname": "get_sales_order_url",
+   "fieldtype": "Data",
+   "label": "Get Sales Order URL"
+  },
+  {
+   "fieldname": "column_break_rdbv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "session_id_2",
+   "fieldtype": "Small Text",
+   "label": "Session ID 2"
+  },
+  {
+   "fieldname": "db2_header_parameters",
+   "fieldtype": "Table",
+   "label": "DB2 Header Parameters",
+   "options": "Key Value Pair"
+  },
+  {
+   "fieldname": "get_single_so_url",
+   "fieldtype": "Data",
+   "label": "Get Single SO URL"
+  },
+  {
+   "fieldname": "get_sap_po_url",
+   "fieldtype": "Data",
+   "label": "Get SAP PO URL"
+  },
+  {
+   "fieldname": "get_bulk_production_order_url",
+   "fieldtype": "Data",
+   "label": "Get Bulk Production Order URL"
+  },
+  {
+   "fieldname": "get_single_production_order_url",
+   "fieldtype": "Data",
+   "label": "Get Single Production Order URL"
+  },
+  {
+   "fieldname": "get_sap_po_update_url",
+   "fieldtype": "Data",
+   "label": "Get SAP PO Update URL"
+  },
+  {
+   "fieldname": "post_asn_url",
+   "fieldtype": "Data",
+   "label": "Post ASN URL"
+  },
+  {
+   "fieldname": "post_packing_url",
+   "fieldtype": "Data",
+   "label": "Post Packing URL"
+  },
+  {
+   "fieldname": "get_sales_order_update_url",
+   "fieldtype": "Data",
+   "label": "Get Sales Order Update URL"
+  },
+  {
+   "fieldname": "get_production_order_update_url",
+   "fieldtype": "Data",
+   "label": "Get Production Order Update URL"
+  },
+  {
+   "fieldname": "post_sales_order_url",
+   "fieldtype": "Data",
+   "label": "Post Sales Order URL"
+  },
+  {
+   "fieldname": "post_asn_sales_invoice_url",
+   "fieldtype": "Data",
+   "label": "Post ASN Sales Invoice URL"
+  },
+  {
+   "fieldname": "get_delivery_note_url",
+   "fieldtype": "Data",
+   "label": "Get Delivery Note URL"
+  },
+  {
+   "fieldname": "section_break_lrqi",
+   "fieldtype": "Section Break",
+   "label": "Scheduler Setting"
+  },
+  {
+   "fieldname": "column_break_jtsu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sports_base_url",
+   "fieldtype": "Data",
+   "label": "Sports Base URL"
+  },
+  {
+   "fieldname": "sports_post_bom_url",
+   "fieldtype": "Data",
+   "label": "Sports Post BOM URL"
+  },
+  {
+   "fieldname": "sports_patch_bom_url",
+   "fieldtype": "Data",
+   "label": "Sports Patch BOM URL"
+  },
+  {
+   "fieldname": "sports_post_item_url",
+   "fieldtype": "Data",
+   "label": "Sports Post Item URL"
+  },
+  {
+   "fieldname": "sports_post_asn_url",
+   "fieldtype": "Data",
+   "label": "Sports Post ASN URL"
+  },
+  {
+   "fieldname": "sports_post_packing_url",
+   "fieldtype": "Data",
+   "label": "Sports Post Packing URL"
+  },
+  {
+   "fieldname": "sports_post_sales_order_url",
+   "fieldtype": "Data",
+   "label": "Sports Post Sales Order URL"
+  },
+  {
+   "fieldname": "sports_post_asn_sales_invoice_url",
+   "fieldtype": "Data",
+   "label": "Sports Post ASN Sales Invoice URL"
+  },
+  {
+   "fieldname": "sports_get_sales_order_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Sales Order URL"
+  },
+  {
+   "fieldname": "sports_get_single_so_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Single SO URL"
+  },
+  {
+   "fieldname": "sports_get_sales_order_update_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Sales Order Update URL"
+  },
+  {
+   "fieldname": "sports_get_sap_po_url",
+   "fieldtype": "Data",
+   "label": "Sports Get SAP PO URL"
+  },
+  {
+   "fieldname": "sports_get_sap_po_update_url",
+   "fieldtype": "Data",
+   "label": "Sports Get SAP PO Update URL"
+  },
+  {
+   "fieldname": "sports_get_bulk_production_order_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Bulk Production Order URL"
+  },
+  {
+   "fieldname": "sports_get_single_production_order_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Single Production Order URL"
+  },
+  {
+   "fieldname": "sports_get_production_order_update_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Production Order Update URL"
+  },
+  {
+   "fieldname": "sports_get_delivery_note_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Delivery Note URL"
+  },
+  {
+   "fieldname": "common_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Common Settings"
+  },
+  {
+   "fieldname": "get_mes_bin_url",
+   "fieldtype": "Data",
+   "label": "Get MES Bin URL"
+  },
+  {
+   "fieldname": "sports_get_mes_bin_url",
+   "fieldtype": "Data",
+   "label": "Sports Get MES Bin URL"
+  },
+  {
+   "fieldname": "post_production_order_for_sole_and_compound",
+   "fieldtype": "Data",
+   "label": "Post Production Order for Sole and Compound"
+  },
+  {
+   "fieldname": "post_daily_production_entry_for_sole_and_compound",
+   "fieldtype": "Data",
+   "label": "Post Daily Production Entry for Sole and Compound"
+  },
+  {
+   "fieldname": "post_daily_sfg_entry",
+   "fieldtype": "Data",
+   "label": "Post Daily SFG Entry"
+  },
+  {
+   "fieldname": "post_production_assembly",
+   "fieldtype": "Data",
+   "label": "Post Production Assembly URL"
+  },
+  {
+   "fieldname": "get_mrp_url",
+   "fieldtype": "Data",
+   "label": "GET MRP URL"
+  },
+  {
+   "fieldname": "sports_get_mrp_url",
+   "fieldtype": "Data",
+   "label": "Sports GET MRP URL"
+  },
+  {
+   "fieldname": "get_production_issue_url",
+   "fieldtype": "Data",
+   "label": "Get Production Issue Url"
+  },
+  {
+   "fieldname": "get_bom_url",
+   "fieldtype": "Data",
+   "label": "Get BOM URL"
+  },
+  {
+   "fieldname": "sports_get_bom_url",
+   "fieldtype": "Data",
+   "label": "Sports Get BOM URL"
+  },
+  {
+   "fieldname": "post_stock_transfer_url",
+   "fieldtype": "Data",
+   "label": "Post Stock Transfer URL"
+  },
+  {
+   "fieldname": "post_upper_receiving",
+   "fieldtype": "Data",
+   "label": "Post Upper Receiving"
+  },
+  {
+   "fieldname": "post_sole_receiving",
+   "fieldtype": "Data",
+   "label": "Post Sole Receiving"
+  },
+  {
+   "fieldname": "get_sap_po_by_item_code",
+   "fieldtype": "Data",
+   "label": "Get SAP PO by Item Code"
+  },
+  {
+   "fieldname": "get_sap_po_by_po_number",
+   "fieldtype": "Data",
+   "label": "Get SAP PO by PO Number"
+  },
+  {
+   "fieldname": "get_jobwork_po_url",
+   "fieldtype": "Data",
+   "label": "Get Jobwork PO URL"
+  },
+  {
+   "fieldname": "sports_get_jobwork_po_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Jobwork PO URL"
+  },
+  {
+   "fieldname": "get_jobwork_po_update_url",
+   "fieldtype": "Data",
+   "label": "Get Jobwork PO Update URL"
+  },
+  {
+   "fieldname": "sports_get_jobwork_po_update_url",
+   "fieldtype": "Data",
+   "label": "Sports Get Jobwork PO Update URL"
+  },
+  {
+   "fieldname": "get_so_bom",
+   "fieldtype": "Data",
+   "label": "Get SO BOM"
+  },
+  {
+   "fieldname": "get_freestock",
+   "fieldtype": "Data",
+   "label": "Get FreeStock"
+  },
+  {
+   "fieldname": "po_post",
+   "fieldtype": "Data",
+   "label": "PO Post"
+  },
+  {
+   "description": "Only requests created within this many minutes will be processed. Leave blank to use the last 24 hours (1440 minutes).",
+   "fieldname": "max_time_in_minutes",
+   "fieldtype": "Int",
+   "label": "Look Back Period (Minutes)"
+  },
+  {
+   "fieldname": "column_break_pnff",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xjxe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rama",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-09-17 18:46:40.737259",
+ "modified_by": "Administrator",
+ "module": "SAP Integration",
+ "name": "SAP Integration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

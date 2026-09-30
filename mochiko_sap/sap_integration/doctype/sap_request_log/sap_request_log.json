@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SRL-{YY}-{#####}",
+ "creation": "2024-09-11 13:08:41.325854",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_6gkg",
+  "url",
+  "is_primary",
+  "column_break_tgu0",
+  "request_type",
+  "request_status",
+  "request_description",
+  "column_break_qnju",
+  "linked_doctype",
+  "linked_docname",
+  "callback_function",
+  "section_break_mw73",
+  "headers",
+  "request_payload",
+  "retry_section",
+  "retry_count",
+  "column_break_dvgd",
+  "max_retry",
+  "section_break_dy5t",
+  "response_logs"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_6gkg",
+   "fieldtype": "Section Break",
+   "label": "Request"
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Small Text",
+   "label": "URL"
+  },
+  {
+   "fieldname": "request_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Request Type",
+   "options": "\nGET\nPOST\nPUT\nPATCH"
+  },
+  {
+   "fieldname": "column_break_tgu0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "request_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Request Status",
+   "options": "Pending\nSuccess\nFailed\nError"
+  },
+  {
+   "fieldname": "section_break_mw73",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "request_payload",
+   "fieldtype": "JSON",
+   "label": "Request Payload"
+  },
+  {
+   "fieldname": "retry_section",
+   "fieldtype": "Section Break",
+   "label": "Retry"
+  },
+  {
+   "fieldname": "retry_count",
+   "fieldtype": "Int",
+   "label": "Retry Count"
+  },
+  {
+   "fieldname": "column_break_dvgd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_retry",
+   "fieldtype": "Int",
+   "label": "Max Retry"
+  },
+  {
+   "fieldname": "section_break_dy5t",
+   "fieldtype": "Section Break",
+   "label": "Response"
+  },
+  {
+   "fieldname": "response_logs",
+   "fieldtype": "Table",
+   "label": "Response Logs",
+   "options": "SAP Response Log"
+  },
+  {
+   "fieldname": "column_break_qnju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linked_doctype",
+   "fieldtype": "Link",
+   "label": "Linked Doctype",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "linked_docname",
+   "fieldtype": "Dynamic Link",
+   "label": "Linked Docname",
+   "options": "linked_doctype"
+  },
+  {
+   "fieldname": "request_description",
+   "fieldtype": "Data",
+   "label": "Request Description"
+  },
+  {
+   "fieldname": "headers",
+   "fieldtype": "JSON",
+   "hidden": 1,
+   "label": "Headers"
+  },
+  {
+   "fieldname": "callback_function",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Callback Function"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_primary",
+   "fieldtype": "Check",
+   "label": "Is Primary"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-04-21 12:33:31.196770",
+ "modified_by": "Administrator",
+ "module": "SAP Integration",
+ "name": "SAP Request Log",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

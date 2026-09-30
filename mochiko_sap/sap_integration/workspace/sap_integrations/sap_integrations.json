@@ -1,0 +1,69 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"CMsxtBKM44\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SAP Integrations</span>\",\"col\":12}},{\"id\":\"cPihCxbwGT\",\"type\":\"card\",\"data\":{\"card_name\":\"SAP Integration\",\"col\":4}}]",
+ "creation": "2024-11-07 18:17:35.467729",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "integration",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "SAP Integrations",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SAP Integration",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SAP Integration",
+   "link_count": 0,
+   "link_to": "SAP Integration",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SAP Request Log",
+   "link_count": 0,
+   "link_to": "SAP Request Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SAP Error Email",
+   "link_count": 0,
+   "link_to": "SAP Error Email",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-15 23:28:58.233017",
+ "modified_by": "Administrator",
+ "module": "SAP Integration",
+ "name": "SAP Integrations",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 44.0,
+ "shortcuts": [],
+ "title": "SAP Integrations"
+}

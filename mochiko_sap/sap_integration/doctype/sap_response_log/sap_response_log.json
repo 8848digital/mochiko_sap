@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-11 13:13:09.335554",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_wbkm",
+  "response_on",
+  "response_status",
+  "response_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_wbkm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "response_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Response On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "response_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Response Status",
+   "options": "\nSuccess\nFailed\nError",
+   "read_only": 1
+  },
+  {
+   "fieldname": "response_data",
+   "fieldtype": "Long Text",
+   "in_list_view": 1,
+   "label": "Response Data",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-09-18 13:32:35.936452",
+ "modified_by": "Administrator",
+ "module": "SAP Integration",
+ "name": "SAP Response Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
